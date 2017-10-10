@@ -43,7 +43,7 @@ namespace Services
 
         public int Insert(T entity)
         {
-            return _repository.Insert(entity);
+                return _repository.Insert(entity);
         }
 
         public bool Update(T entity)
