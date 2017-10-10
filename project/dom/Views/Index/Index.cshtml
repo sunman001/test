@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var list = ViewBag.list as List<Domain.DxGlobalLogError>;
+}
+
+<h2>Index</h2>
+<script >
+    //对象
+    var person = {};
+    //person = {
+    //    "name": "Nicholas",
+    //    "age":29
+    //}
+    person.name = "Nicholas";
+    person.age = 29;
+   // alert(person.name);
+    var args = {name:"Nicholas",age:29};
+  //  displayInfo(args);
+    function displayInfo(args)
+    {     
+        var output = "";
+        if(typeof args.name=="string")
+        {
+            output += "Name:" + args.name + "\n";
+        }
+        if(typeof args.age=="number")
+        {
+            output += "Age:" + args.age + "\n";
+        }
+        alert(output);
+    }
+    //数组
+    var clors = ["red", "blue", "green"];
+   // alert(clors[0]);
+   // clors[2] = "black";
+   // clors[3] = "brown";
+    clors[clors.length] = "black";
+    clors[clors.length] = "brown";
+    var count = clors.push("white");//追加
+   // alert(count)
+   // alert(clors.join(","));
+    // alert(clors.join("||"));
+    var item = clors.pop();//获取数组的最后一项并移除
+    var item1 = clors.shift();//取得第一项并移除
+    var countunshift = clors.unshift("red", "green");//推入两项
+    //重排序方法
+    var values = [1, 0, 10, 15, 5];
+    //values.reverse();//反转数组项
+    //alert(values);//5,4,3,2,1
+    values.sort();//升序排列数组项
+   // alert(values)//0,1,10,15,5
+    //升序排序方法
+    function compare(value1,value2)
+    {
+        if(value1<value2)
+        {
+            return -1;
+        }
+        else if(value1>value2)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    values.sort(compare);
+   // alert(values);//0,1,5,10,15
+    //操作方法 concat()方法 可以基于当前数组中的所有项创建一个新数组
+    var colors = ["red", "green", "blue"];
+    var colors2 = colors.concat("yellow", ["black", "brown"]);
+  //  alert(colors);//red,green,blue
+  //  alert(colors2);//red,green,blue,yellow,black,brown
+    //slice() //它能够基于当前数组中的一或多个项创建一个新数组 
+    //slice()方法可以接受一或两个参数，既要返回项的起始和结束位置，在只有一个参数的情况下，slice()方法返回从该参数指定位置开始到当前数组未尾的所有项
+    //如果有两个参数，该方法返回起始和结束位置之间的项---但不包括结束位置的项 
+    //注意 slice() 方法不会影响原始数组
+    //如果slice()方法的参数中有一个负数，则用数组长度加上该数来确定相应的位
+   // 置。例如，在一个包含5 项的数组上调用slice(-2,-1)与调用slice(3,4)得到的
+    // 结果相同。如果结束位置小于起始位置，则返回空数组。
+    var colorslice = ["red","green","blue","yellow","purple"];
+    var colors3 = colors.slice(1);// green blue
+    var colors4 = colors.slice(1, 3);
+    var colors5 = colorslice.slice(-2, -1);
+    var colors6 = colorslice.slice(3,4);
+   // alert(colors5);
+    // alert(colors6);
+    //splice
+    var colorsplice = ["red", "green", "blue"];
+    var removed = colorsplice.splice(0, 3);
+   // alert(removed);
+    //位置方法 indexof() 和 lastIndexof() 这两个方法都接收两个参数：要查找的项和（可选的）表示查找起点位置的索引 其中 indexof()方法从数组的开头（位置0）开始向后查找
+    //lastIndexof()方法则从数组的未尾开始向前查找
+    var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+ //   alert(numbers.indexOf(4));//3
+  //  alert(numbers.lastIndexOf(4))//5
+    //超时调用需要使用window 对象的setTimeOut()方法 它接受两个参数：要执行的代码和以毫秒表示的时间（即在执行代码前需要等待多时毫秒）
+    //setTimeout(function ()
+    //{
+    //    alert("hellow world");
+    //},10000
+    //)
+    //间歇调用
+    //setInterval(function ()
+    //{
+    //    alert(" hello world");
+    //},1000
+    //)
+    //typeof运算符 
+    var sTemp = "test string ";
+   // alert(typeof sTemp);//string 
+   // alert(typeof 86);//number
+    //parseInt() paresFloat()
+    //delete运算符 删除对以前定义的对象属性或方法的引用
+    var o ={};
+    o.name = "David";
+    //alert(o.name)//David
+    delete o.name;
+   // alert(o.name);
+    //break 语句可以立即退出循环 阻止再次反复执行任何代码 而continue 语句只是退出当前循环 根据控制表达式还允许继续进行下一次循环
+
+    var iNum = 0;
+    for (var i = 1; i < 10;i++)
+    {
+        if(i%5==0)
+        {
+            break;
+        }
+        iNum++
+    }
+   // alert(iNum);//输出4
+    //constructor 属性返回对创建此对象的数组函数的引用。
+    var test = {};
+
+    if(test.constructor==Object)
+    {
+        console.info("this is object");
+    }
+    if(test.constructor==Array)
+    {
+        console.info("this is Array");
+    }
+     if (test.constructor==Boolean)
+    {
+        console.info("this is Boolean");
+    }
+     if (test.constructor==Date)
+    {
+        console.info("this is a Date");
+    }
+
+     var numbers = 1.02
+     var numberst = parseFloat(numbers);//1.02
+     var numberst1 = parseInt(numbers);//1
+     var numberst2 = Number(numbers);//1.02
+     console.info(numberst);
+  
+</script>
+
