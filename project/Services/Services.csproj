@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="DxGlobalLogErrorService.cs" />
     <Compile Include="GenericService.cs" />
     <Compile Include="IDxGlobalLogErrorService.cs" />
