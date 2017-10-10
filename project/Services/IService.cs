@@ -16,7 +16,7 @@ namespace Services
         IEnumerable<T> FindAll();
 
         IPagedList<T> FindPagedList( string orderBy,string @where="",object parameters=null,int pageIndex=0,int pageSize=20);
-        T FindById(int id);
+             T FindById(int id);
         int Insert(T entity);
         bool Update(T entity);
 
